@@ -1,13 +1,13 @@
 import {
   ContactListStyle,
-  BtnDelCont,
-  ItemContLst,
+  // BtnDelCont,
+  // ItemContLst,
 } from './ContactList.styled';
 
 export const ContactList = ({ isContacts, onRemoveContact }) => {
    return (
     <ContactListStyle>
-      {isContacts.map(el => {
+      {/* {isContacts.map(el => {
         return (
           <ItemContLst key={el.id}>
             <BtnDelCont type="button" onClick={() => onRemoveContact(el.id)}>
@@ -16,7 +16,7 @@ export const ContactList = ({ isContacts, onRemoveContact }) => {
             {el.name} : {el.number}
           </ItemContLst>
         );
-      })}
+      })} */}
     </ContactListStyle>
   );
 };
