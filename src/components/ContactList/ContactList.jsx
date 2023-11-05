@@ -5,11 +5,12 @@ import {
 } from './ContactList.styled';
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteContact } from 'components/redux/contactSlice';
-
+import {getConactFromState} from 'components/redux/contactSlice'
+import { getFilter } from 'components/redux/filterSlice';
 
 export const ContactList = () => {
-const isContacts = useSelector(state=> state.contactsUser.contactsUser);
-const filterCont  = useSelector(state=> state.filterUser);
+const isContacts = useSelector(getConactFromState);
+const filterCont  = useSelector(getFilter);
 
 const getFilterContacts = ()=>{
    if (!filterCont.filter) {

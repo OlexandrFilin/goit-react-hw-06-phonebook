@@ -14,3 +14,8 @@ export const filterSlice= createSlice({
   });
 
   export const { setFilter} = filterSlice.actions;
+
+
+ // selectors
+
+ export const getFilter = state=> state.filterUser;

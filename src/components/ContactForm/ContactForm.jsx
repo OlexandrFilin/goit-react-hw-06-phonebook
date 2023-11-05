@@ -3,12 +3,12 @@ import { FormUser, LabelForm, InputUser } from './ContactForm.styled';
 import { nanoid } from 'nanoid';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'components/redux/contactSlice';
+import { addContact, getConactFromState } from 'components/redux/contactSlice';
 
 export const ContactForm = () => {
   const [isName, setName] = useState('');
   const [isNumber, setNumber] = useState('');
-  const contacts = useSelector(state =>state.contactsUser.contactsUser);
+  const contacts = useSelector(getConactFromState);
   //console.log('contacts', contacts);
   const dispatch = useDispatch();
 

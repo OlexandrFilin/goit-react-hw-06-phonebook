@@ -38,3 +38,7 @@ const persistConfig = {
 }
  
 export const persistedContactReducer = persistReducer(persistConfig, contactSlice.reducer);
+
+//selectors
+export const getConactFromState = state=> state.contactsUser.contactsUser
+
