@@ -8,7 +8,6 @@ export const App = () => {
 
     const dispatch=useDispatch();
   const handelInputChangeFilter = e => {
-console.log('e.currentTarget.value)', e.currentTarget.value);
   dispatch(setFilter(e.currentTarget.value));
   };
   

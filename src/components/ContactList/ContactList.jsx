@@ -12,25 +12,17 @@ const isContacts = useSelector(state=> state.contactsUser.contactsUser);
 const filterCont  = useSelector(state=> state.filterUser);
 
 const getFilterContacts = ()=>{
- 
    if (!filterCont.filter) {
     return isContacts;
     }
-
- return isContacts.filter(contact=>{
-
- return  contact.name.toUpperCase().includes(filterCont.filter.toUpperCase())
- 
-})
-
+ return isContacts.filter(contact=>contact.name.toUpperCase().includes(filterCont.filter.toUpperCase())
+ )
 }
 
 const dispatch = useDispatch();
-
   const onRemoveContact =(id)=>{
     dispatch(deleteContact(id))
   }
-
    return (
     <ContactListStyle>
        {getFilterContacts().map(el => {
