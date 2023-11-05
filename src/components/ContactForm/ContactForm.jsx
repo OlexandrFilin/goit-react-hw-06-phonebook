@@ -12,7 +12,7 @@ export const ContactForm = ({ onSubmitForm }) => {
 
 
   const dispatch = useDispatch();
-  
+
   const onChange = e => {
     const { name, value } = e.currentTarget;
     if (name === 'name') {
@@ -28,14 +28,14 @@ export const ContactForm = ({ onSubmitForm }) => {
   };
   const submitForm = evt => {
     evt.preventDefault();
-     const addCont=dispatch(addContact( 
+     dispatch(addContact( 
       {
       id: nanoid(),
       name: isName,
       number: isNumber,
     }
     ));
-   console.log('dispatch', addCont)
+   //console.log('dispatch', addCont)
     //);
     resetForm();
   };
