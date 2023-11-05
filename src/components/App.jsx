@@ -34,11 +34,11 @@ export const App = () => {
   // };
 
   //   //відправка форми з перевіркою існування контаку в списку
-  const onSubmit = newCont => {
+  //const onSubmit = newCont => {
   //   if (contactByNameSearch(newCont.name, isContacts)) {
   //     alert(`${newCont.name} is alredy in conacts`);
-      return;
-    }
+    //   return;
+    // }
 
   //   setContacts(prevState => {
   //     setContacts([...prevState, newCont]);
@@ -69,7 +69,8 @@ export const App = () => {
   return (
     <>
       <h1 style={{ marginLeft: '20px' }}>Phonebook</h1>
-      <ContactForm onSubmitForm={onSubmit} />
+      <ContactForm />
+      {/* <ContactForm onSubmitForm={onSubmit} /> */}
       <h2 style={{ marginLeft: '20px' }}>Contacts</h2>
       <Filter
         style={{ marginLeft: '20px' }}
@@ -78,7 +79,7 @@ export const App = () => {
       />
       <ContactList
         // isContacts={getFilteredContacts(isFilter)}
-        // onRemoveContact={onRemoveContact}
+       // onRemoveContact={onRemoveContact}
       />
     </>
   );

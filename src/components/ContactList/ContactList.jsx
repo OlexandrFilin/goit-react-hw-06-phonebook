@@ -1,13 +1,23 @@
 import {
   ContactListStyle,
-  // BtnDelCont,
-  // ItemContLst,
+  BtnDelCont,
+   ItemContLst,
 } from './ContactList.styled';
+import { useDispatch, useSelector } from 'react-redux'
+import { deleteContact } from 'components/redux/contactSlice';
 
-export const ContactList = ({ isContacts, onRemoveContact }) => {
+
+export const ContactList = () => {
+const isContacts = useSelector(state=> state.contactsUser.contactsUser);
+const dispatch = useDispatch();
+
+  const onRemoveContact =(id)=>{
+    dispatch(deleteContact(id))
+  }
+
    return (
     <ContactListStyle>
-      {/* {isContacts.map(el => {
+       {isContacts.map(el => {
         return (
           <ItemContLst key={el.id}>
             <BtnDelCont type="button" onClick={() => onRemoveContact(el.id)}>
@@ -16,7 +26,7 @@ export const ContactList = ({ isContacts, onRemoveContact }) => {
             {el.name} : {el.number}
           </ItemContLst>
         );
-      })} */}
+      })}
     </ContactListStyle>
   );
 };

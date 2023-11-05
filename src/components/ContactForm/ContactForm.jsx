@@ -2,10 +2,17 @@ import React from 'react';
 import { FormUser, LabelForm, InputUser } from './ContactForm.styled';
 import { nanoid } from 'nanoid';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addContact } from 'components/redux/contactSlice';
 
 export const ContactForm = ({ onSubmitForm }) => {
   const [isName, setName] = useState('');
   const [isNumber, setNumber] = useState('');
+  //const state =useSelector(state=>state.contactsUser.contactsUser)
+
+
+  const dispatch = useDispatch();
+  
   const onChange = e => {
     const { name, value } = e.currentTarget;
     if (name === 'name') {
@@ -14,17 +21,22 @@ export const ContactForm = ({ onSubmitForm }) => {
       setNumber(value);
     }
   };
+
   const resetForm = () => {
     setName('');
     setNumber('');
   };
   const submitForm = evt => {
     evt.preventDefault();
-    onSubmitForm({
+     const addCont=dispatch(addContact( 
+      {
       id: nanoid(),
       name: isName,
       number: isNumber,
-    });
+    }
+    ));
+   console.log('dispatch', addCont)
+    //);
     resetForm();
   };
   return (
