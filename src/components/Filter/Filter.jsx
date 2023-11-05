@@ -10,7 +10,7 @@ export const Filter = ({ handleFilter, filter }) => {
       <input
         type="text"
         name="filter"
-        value={filter}
+        //value={filter}
         className={css.inpfiltr}
         onChange={onChange}
         placeholder="Filter by name"
